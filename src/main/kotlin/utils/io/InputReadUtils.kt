@@ -1,4 +1,4 @@
-package com.fugisawa.utils
+package com.fugisawa.utils.io
 
 fun readResourceFile(fileName: String): String {
     val inputStream = object {}.javaClass.classLoader.getResourceAsStream(fileName)

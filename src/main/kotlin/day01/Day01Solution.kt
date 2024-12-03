@@ -1,6 +1,7 @@
 package com.fugisawa.day01
 
-import com.fugisawa.utils.readResourceFileLines
+import com.fugisawa.utils.io.readResourceFileLines
+import com.fugisawa.utils.text.repeatedSpacesRegex
 import kotlin.math.abs
 import kotlin.time.measureTimedValue
 
@@ -39,7 +40,5 @@ fun similarityScore(pairs: List<Pair<Int, Int>>): Long {
 private fun parseLine(line: String): Pair<Int, Int>? = line
     .trim()
     .takeIf(String::isNotBlank)
-    ?.split(repeatedSpaces)
+    ?.split(repeatedSpacesRegex)
     ?.let { it[0].toInt() to it[1].toInt() }
-
-private val repeatedSpaces = Regex("\\s+")
